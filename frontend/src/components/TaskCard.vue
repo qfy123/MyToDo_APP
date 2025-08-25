@@ -206,7 +206,7 @@ const getPriorityText = (priority: TaskPriority) => {
     case TaskPriority.Low:
       return '🟢 低优先级';
     default:
-      return '🟢 低优先级';
+      return '🟡 中优先级';
   }
 };
 

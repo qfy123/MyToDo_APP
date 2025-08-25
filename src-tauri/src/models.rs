@@ -22,11 +22,21 @@ pub struct Tag {
     pub created_at: DateTime<Utc>,
 }
 
-#[derive(Debug, Clone, Copy, Serialize)]
+#[derive(Debug, Clone, Copy)]
 pub enum TaskPriority {
     Low = 0,
     Medium = 1,
     High = 2,
+}
+
+// 自定义序列化为数字
+impl Serialize for TaskPriority {
+    fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+    where
+        S: serde::Serializer,
+    {
+        serializer.serialize_u8(*self as u8)
+    }
 }
 
 // 自定义反序列化以支持从整数值反序列化
