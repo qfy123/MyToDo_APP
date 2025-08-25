@@ -1,6 +1,6 @@
 [package]
 name = "mytodo-app"
-version = "0.1.0"
+version = "0.1.1"
 description = "MyTodo - 个人待办事项管理应用"
 authors = ["MyTodo Team"]
 license = "MIT"
